@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Herbal SkinClinic | Korean Glass Skin, HydraFacial, Laser in Chennai</title>
+<title>HerbalSkin Clinic | Korean Glass Skin, HydraFacial, Laser in Chennai</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- NO JAVASCRIPT - ONLY HTML + CSS -->
+<!-- NO JAVASCRIPT - NO NEXT PAGE BUTTON - ONLY HTML + CSS -->
 <style>
-:root{--pink:#C48A8A;--dark:#2B1A1A;--gold:#C9A86A;--light-pink:#FFF5F5;--cream:#FDF8F3;--card:#FFFFFF}
+:root{--pink:#C48A8A;--dark:#2B1A1A;--gold:#C9A86A;--cream:#FDF8F3;--card:#FFFFFF}
 *{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
 body{font-family:'Poppins',sans-serif;background:var(--cream);color:#2B1A1A}
 h1,h2,h3{font-family:'Playfair Display',serif}
@@ -132,16 +132,17 @@ details summary::-webkit-details-marker{display:none}
 details summary::after{content:"+";float:right;font-size:20px;color:var(--pink)}
 details[open] summary::after{content:"-"}
 details p{margin-top:10px;color:#555;font-size:14px}
-.page{display:none}
-#home{display:block}
-body:has(#about:target) #home,body:has(#treatments:target) #home,body:has(#booking:target) #home,body:has(#contact:target) #home{display:none}
-#about:target,#treatments:target,#booking:target,#contact:target{display:block}
-.next-nav{display:flex;justify-content:space-between;align-items:center;padding:14px;background:#fff;border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,.08);margin:10px 0 20px;gap:10px}
-.btn-next{background:var(--pink);color:#fff;padding:11px 18px;border-radius:30px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
-.btn-next:hover{background:#A96F6F;color:#fff}
-.btn-prev{background:#fff;color:#2B1A1A;border:2px solid #2B1A1A;padding:10px 16px;border-radius:30px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
-.btn-prev:hover{background:#2B1A1A;color:#fff}
-.page-number{font-weight:800;color:#666;font-size:12px;text-align:center}
+/* NAVIGATION - NO body:has() - WORKS IN ALL BROWSERS - NO NEXT PAGE */
+.pages-wrap .page{display:none}
+.pages-wrap #home{display:block}
+.pages-wrap #about:target ~ #home,
+.pages-wrap #treatments:target ~ #home,
+.pages-wrap #booking:target ~ #home,
+.pages-wrap #contact:target ~ #home{display:none}
+.pages-wrap #about:target,
+.pages-wrap #treatments:target,
+.pages-wrap #booking:target,
+.pages-wrap #contact:target{display:block;animation:fadeUp .5s ease both}
 .bottom-nav{display:none}
 .desktop-search{display:flex;background:#FFF0EB;border-radius:30px;align-items:center;padding:5px 5px 5px 14px}
 .desktop-search input{border:none;outline:none;background:transparent;width:100%;font-size:14px}
@@ -174,9 +175,6 @@ section{padding:70px 0}
 .counter-box{padding:28px}
 .counter-box h2{font-size:36px}
 .about-img{height:440px}
-.next-nav{padding:20px}
-.btn-next,.btn-prev{font-size:15px;padding:13px 28px}
-.page-number{font-size:14px}
 footer{padding:60px 0 20px}
 }
 </style>
@@ -187,17 +185,17 @@ footer{padding:60px 0 20px}
 <div class="offer-strip"><span>✨ KOREAN GLASS SKIN - FLAT 30% OFF • Code: GLOW30 • FREE AI 3D Skin Analysis • HydraFacial ₹2,999 Only • Book Your Glow Day ✨</span></div>
 
 <div class="desktop-nav"><div class="container d-flex justify-content-between align-items-center">
-<a class="logo" href="#home">✨Herbal<span> Skin Clinic✨ </span></a>
+<a class="logo" href="#home">Herbal<span>Skin Clinic</span></a>
 <div class="d-flex align-items-center gap-3">
-<a class="nav-link" href="#home"><i class="bi bi-house-door"></i> Home</a>
-<a class="nav-link" href="#about"><i class="bi bi-info-circle"></i> About</a>
-<a class="nav-link" href="#treatments"><i class="bi bi-stars"></i> Treatments</a>
-<a class="nav-link" href="#booking"><i class="bi bi-calendar-check"></i> Book Consultation</a>
-<a class="nav-link" href="#contact"><i class="bi bi-telephone"></i> Contact</a>
+<a class="nav-link" href="#home">🏠 Home</a>
+<a class="nav-link" href="#about">About</a>
+<a class="nav-link" href="#treatments">Treatments</a>
+<a class="nav-link" href="#booking">Book Consultation</a>
+<a class="nav-link" href="#contact">Contact</a>
 </div>
 <div class="d-flex align-items-center gap-2">
 <div class="desktop-search"><i class="bi bi-search me-2 text-muted"></i><input placeholder="Search Glass Skin, Laser..."><button><i class="bi bi-search"></i></button></div>
-<a href="#booking" class="book-btn"><i class="bi bi-calendar-heart"></i> Book Free Consultation</a>
+<a href="#booking" class="book-btn">Book Free Consultation</a>
 </div>
 </div></div>
 
@@ -205,7 +203,7 @@ footer{padding:60px 0 20px}
 <input type="checkbox" id="nav-toggle">
 <div class="mobile-top-inner">
 <div class="d-flex justify-content-between align-items-center">
-<a class="logo" href="#home">The Skin Studio<span> Skin Clinic</span></a>
+<a class="logo" href="#home">Herbal<span>Skin Clinic</span></a>
 <div class="d-flex align-items-center gap-2">
 <a href="#booking" class="book-btn" style="padding:8px 14px">Book Free</a>
 <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
@@ -219,10 +217,97 @@ footer{padding:60px 0 20px}
 <a href="#treatments">✨ Treatments & Prices</a>
 <a href="#booking">📅 Book Free Consultation</a>
 <a href="#contact">📞 Contact</a>
-<div style="background:#FFF5F5;border-radius:10px;padding:12px;margin-top:10px;text-align:center"><b style="color:var(--pink)">FREE AI Skin Analysis Venum-a?</b><br><a href="https://wa.me/919876543210" style="display:inline-block;background:#25D366;color:#fff;padding:8px 18px;border-radius:20px;margin-top:6px;font-weight:700;text-decoration:none"><i class="bi bi-whatsapp"></i> WhatsApp Book →</a></div>
+<div style="background:#FFF5F5;border-radius:10px;padding:12px;margin-top:10px;text-align:center"><b style="color:var(--pink)">FREE AI Skin Analysis Venum-a?</b><br><a href="https://wa.me/919876543210" style="display:inline-block;background:#25D366;color:#fff;padding:8px 18px;border-radius:20px;margin-top:6px;font-weight:700;text-decoration:none">WhatsApp Book →</a></div>
 </div>
 </div></div>
 
+<div class="pages-wrap">
+
+<!-- PAGE 2 : ABOUT -->
+<div id="about" class="page">
+<section><div class="container">
+<div class="text-center mb-3 aos-zoom"><p class="icon-badge">ABOUT US</p><h2 class="section-title mt-2">More Than A Clinic, <span>It's Your Glow Story</span></h2><p style="font-size:14px;color:#888">Inspired By Korean Aesthetic Science - Since 2015</p></div>
+<div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><img class="about-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"></div><div class="col-md-6 aos-right"><h4>Our Story - V Glow</h4><p style="font-size:14px;color:#444">V Care COE Chennai-la Korean Glass Skin treatment-a paathu inspire aagi, naanga V Glow-a start pannen. Aim simple - <b>Korean technology, Chennai price-la, Dermatologist care-oda.</b></p><p style="font-size:14px;color:#444">2015-la chinna clinic-a start panni, ippo 20,000+ happy clients, 60+ treatments, FDA-approved machines-oda Chennai-vin trusted skin clinic-a irukkom.</p><div class="row g-2 mt-2"><div class="col-4 aos-bounce"><div class="counter-box"><h2>10+</h2><p>Years</p></div></div><div class="col-4 aos-bounce d1"><div class="counter-box"><h2>20K+</h2><p>Clients</p></div></div><div class="col-4 aos-bounce d2"><div class="counter-box"><h2>60+</h2><p>Treatments</p></div></div></div></div></div>
+</div></section>
+<section class="bg-white"><div class="container"><div class="mb-3 aos-up"><p class="section-sub">TECHNOLOGY</p><h2 class="section-title">World-Class <span>Technology</span></h2><p style="font-size:14px">V Care COE maari - Korea, Israel, Europe-la irundhu FDA-approved machines</p></div>
+<div class="row g-2 g-md-4">
+<div class="col-12 col-md-4 aos-left"><div class="service-card"><i class="bi bi-cpu"></i><h4 class="mt-2" style="font-size:16px">AI 3D Skin Analyser</h4><p style="font-size:13px">180° scan - Pigmentation, Pores, Sensitivity, Texture - 30 mins-la full report.</p></div></div>
+<div class="col-12 col-md-4 aos-zoom"><div class="service-card"><i class="bi bi-lightning-charge"></i><h4 class="mt-2" style="font-size:16px">Alma Laser Platform</h4><p style="font-size:13px">Fractional resurfacing - Acne scar, pores, texture - K-Beauty standard.</p></div></div>
+<div class="col-12 col-md-4 aos-right"><div class="service-card"><i class="bi bi-activity"></i><h4 class="mt-2" style="font-size:16px">Ultracel Q+ & Forma RF</h4><p style="font-size:13px">Ultrasound + Radiofrequency - Lift, Firm, Collagen boost - No surgery.</p></div></div>
+</div></div></section>
+<section><div class="container"><div class="mb-3 aos-fade"><p class="section-sub">OUR VALUES</p><h2 class="section-title">Why Clients <span>Trust Us</span></h2></div>
+<div class="row g-2 g-md-4">
+<div class="col-6 col-md-4 aos-flip"><div class="about-value"><i class="bi bi-patch-check-fill"></i><h5 class="mt-2" style="font-size:14px">FDA Approved Only</h5><p class="small text-muted">Cheap machines illa, certified only</p></div></div>
+<div class="col-6 col-md-4 aos-flip d1"><div class="about-value"><i class="bi bi-person-badge"></i><h5 class="mt-2" style="font-size:14px">Dermatologist Led</h5><p class="small text-muted">Every treatment doctor approval-oda</p></div></div>
+<div class="col-6 col-md-4 aos-flip"><div class="about-value"><i class="bi bi-eye"></i><h5 class="mt-2" style="font-size:14px">Natural Results</h5><p class="small text-muted">Overdone look illa, subtle glow mattum</p></div></div>
+<div class="col-6 col-md-4 aos-flip d1"><div class="about-value"><i class="bi bi-shield-check"></i><h5 class="mt-2" style="font-size:14px">Transparent Pricing</h5><p class="small text-muted">Hidden charges illa, EMI available</p></div></div>
+<div class="col-6 col-md-4 aos-flip"><div class="about-value"><i class="bi bi-heart"></i><h5 class="mt-2" style="font-size:14px">Personalised Plan</h5><p class="small text-muted">Oruve treatment ellaarkum illa</p></div></div>
+<div class="col-6 col-md-4 aos-flip d1"><div class="about-value"><i class="bi bi-clock"></i><h5 class="mt-2" style="font-size:14px">90 Days Follow-up</h5><p class="small text-muted">Treatment mudinjadhum follow-up free</p></div></div>
+</div></div></section>
+<section class="bg-white"><div class="container"><div class="mb-3 aos-up"><h2 class="section-title">Our <span>Journey</span></h2></div>
+<div class="row g-3"><div class="col-md-6"><div class="timeline-box aos-left"><h5>2015 - Started</h5><p>T Nagar-la chinna clinic-la start pannom. 2 doctors, 3 treatments mattum.</p></div><div class="timeline-box aos-left d1"><h5>2019 - Korean Technology</h5><p>Korea-la training eduthu, Glass Skin protocol-a Chennai-ku kondu vandhom.</p></div></div><div class="col-md-6"><div class="timeline-box aos-right"><h5>2022 - AI Skin Lab</h5><p>AI 3D Skin Analyser introduce pannom - Chennai-la first few clinics-la oruvar.</p></div><div class="timeline-box aos-right d1"><h5>2026 - 20K+ Clients</h5><p>Ippo 20,000+ happy clients, 4.9★ Google Rating, 60+ treatments.</p></div></div></div>
+<div class="mt-3 text-center aos-zoom"><a href="#treatments" class="btn-pink">View Treatments →</a> <a href="#booking" class="btn-white">Book FREE Analysis</a></div>
+</div></section>
+</div>
+
+<!-- PAGE 3 : TREATMENTS -->
+<div id="treatments" class="page">
+<section class="bg-white"><div class="container">
+<div class="text-center mb-3 aos-zoom"><p class="icon-badge">TREATMENTS & PRICES</p><h2 class="section-title mt-2">Choose Your <span>Glow</span></h2><p style="font-size:14px">Transparent Pricing - EMI Available - No Hidden Charges</p></div>
+<div class="row g-2 g-md-4">
+<div class="col-6 col-md-3 aos-up"><div class="treat-card"><span class="tag">✨ SIGNATURE</span><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">30% OFF</span><h5 class="mt-2 mb-1">Korean Glass Skin</h5><p class="small text-muted mb-1">7L + 3D • Single Day • 90 Days Glow</p><div><span class="price">₹9,999</span> <span class="old-price">₹14,999</span></div><p class="small text-success mb-2">★ 4.9 | 2,500+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-up d1"><div class="treat-card"><span class="tag">💧 POPULAR</span><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">40% OFF</span><h5 class="mt-2 mb-1">HydraFacial Glow</h5><p class="small text-muted mb-1">45 Mins • Instant Glow • No Downtime</p><div><span class="price">₹2,999</span> <span class="old-price">₹4,999</span></div><p class="small text-success mb-2">★ 5.0 | 5,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-up"><div class="treat-card"><span class="tag">LASER</span><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">50% OFF</span><h5 class="mt-2 mb-1">Laser Hair Removal</h5><p class="small text-muted mb-1">Diode Laser • 6 Sessions • Painless</p><div><span class="price">₹4,999</span> <span class="old-price">₹9,999</span></div><p class="small text-success mb-2">★ 4.8 | 8,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-up d1"><div class="treat-card"><span class="tag">CLEAR SKIN</span><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">25% OFF</span><h5 class="mt-2 mb-1">Pigmentation Laser</h5><p class="small text-muted mb-1">Dark Spots • Melasma • 3 Sessions</p><div><span class="price">₹5,999</span> <span class="old-price">₹7,999</span></div><p class="small text-success mb-2">★ 4.9 | 3,200+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-slide-up"><div class="treat-card"><span class="tag">ACNE</span><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">20% OFF</span><h5 class="mt-2 mb-1">Acne & Scar Treatment</h5><p class="small text-muted mb-1">Exosome + Laser • 90 Days Plan</p><div><span class="price">₹6,999</span> <span class="old-price">₹8,999</span></div><p class="small text-success mb-2">★ 4.9 | 4,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-slide-up d1"><div class="treat-card"><span class="tag">ANTI-AGEING</span><img src="https://images.unsplash.com/photo-1512291313931-d4291048e7b6?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">15% OFF</span><h5 class="mt-2 mb-1">Botox & Fillers</h5><p class="small text-muted mb-1">Natural Lift • Doctor Only • Safe</p><div><span class="price">₹8,999</span> <span class="old-price">₹10,999</span></div><p class="small text-success mb-2">★ 4.8 | 1,800+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-slide-up"><div class="treat-card"><span class="tag">WHITENING</span><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">30% OFF</span><h5 class="mt-2 mb-1">Skin Whitening / Brightening</h5><p class="small text-muted mb-1">Glutathione + Laser • Even Tone</p><div><span class="price">₹7,999</span> <span class="old-price">₹11,999</span></div><p class="small text-success mb-2">★ 4.7 | 2,100+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+<div class="col-6 col-md-3 aos-slide-up d1"><div class="treat-card"><span class="tag">HOLLYWOOD</span><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">35% OFF</span><h5 class="mt-2 mb-1">Carbon Hollywood Peel</h5><p class="small text-muted mb-1">Party Glow • 30 Mins • Instant</p><div><span class="price">₹3,499</span> <span class="old-price">₹5,499</span></div><p class="small text-success mb-2">★ 4.9 | 6,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
+</div>
+</div></section>
+</div>
+
+<!-- PAGE 4 : BOOKING -->
+<div id="booking" class="page">
+<section style="background:#FFF5F5"><div class="container"><div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><h2 class="section-title">Book FREE AI Skin Analysis.<br><span>Get Your Personal Glow Plan.</span></h2><p style="font-size:14px">AI 3D Analyser-la unga skin-a scan panni, doctor unga-ku personalised plan tharuvanga. No obligation, no pressure.</p>
+<div class="row g-2 mt-2">
+<div class="col-4 aos-zoom"><div class="step-box"><div class="step-num">1</div><h6 style="font-size:13px">Book Free</h6><p class="small">Form fill pannunga</p></div></div>
+<div class="col-4 aos-zoom d1"><div class="step-box"><div class="step-num">2</div><h6 style="font-size:13px">AI Analysis</h6><p class="small">30 mins scan</p></div></div>
+<div class="col-4 aos-zoom d2"><div class="step-box"><div class="step-num">3</div><h6 style="font-size:13px">Glow Plan</h6><p class="small">Doctor plan</p></div></div>
+</div></div>
+<div class="col-md-6 aos-right"><div class="book-box"><div style="font-size:40px">✨🔍💆‍♀️</div><h4 class="mt-2">Book FREE Consultation</h4><p class="text-muted" style="font-size:13px">Worth ₹1,499 - Today FREE | Limited Slots</p><input type="text" placeholder="Your Name" class="form-control mb-2"><input type="tel" placeholder="Phone Number" class="form-control mb-2"><select class="form-select mb-2"><option>Select Concern</option><option>Korean Glass Skin</option><option>HydraFacial</option><option>Laser Hair Removal</option><option>Pigmentation / Dark Spots</option><option>Acne & Scar</option><option>Botox & Fillers</option><option>Anti-Ageing</option></select><input type="date" class="form-control mb-2"><a href="#contact" class="btn-pink w-100 text-center">Book FREE Analysis →</a><p class="small mt-2 text-muted">100% Private • No Spam • Doctor Call Within 2 Hours</p></div></div>
+</div></div></section>
+<section><div class="container"><div class="mb-3 aos-up"><p class="section-sub">OUR SERVICES</p><h2 class="section-title mt-2">More Than Just <span>A Clinic</span></h2></div>
+<div class="row g-2 g-md-4">
+<div class="col-12 col-md-4 aos-left"><div class="service-card"><i class="bi bi-cpu"></i><h4 class="mt-2" style="font-size:16px">AI Skin Analysis - FREE</h4><p style="font-size:13px">Pigmentation, pores, sensitivity, texture - Full report in 30 mins.</p></div></div>
+<div class="col-12 col-md-4 aos-zoom"><div class="service-card"><i class="bi bi-chat-dots"></i><h4 class="mt-2" style="font-size:16px">Doctor Consultation - FREE First Visit</h4><p style="font-size:13px">Dermatologist kitta 1-on-1 - Treatment plan + home care routine.</p></div></div>
+<div class="col-12 col-md-4 aos-right"><div class="service-card"><i class="bi bi-bag-heart"></i><h4 class="mt-2" style="font-size:16px">Home Care Kits</h4><p style="font-size:13px">Doctor recommended kits - Cleanser, Serum, Sunscreen, Moisturiser.</p></div></div>
+<div class="col-12 col-md-4 aos-left"><div class="service-card"><i class="bi bi-calendar-check"></i><h4 class="mt-2" style="font-size:16px">90 Days Follow-up</h4><p style="font-size:13px">Treatment-ku apram 90 days free follow-up + WhatsApp support.</p></div></div>
+<div class="col-12 col-md-4 aos-zoom"><div class="service-card"><i class="bi bi-credit-card"></i><h4 class="mt-2" style="font-size:16px">Easy EMI - 0% Interest</h4><p style="font-size:13px">Glass Skin-ku EMI - ₹999/month-la start pannalaam.</p></div></div>
+<div class="col-12 col-md-4 aos-right"><div class="service-card"><i class="bi bi-gift"></i><h4 class="mt-2" style="font-size:16px">Bridal Glow Package</h4><p style="font-size:13px">Wedding-ku 90 days munnadi start pannunga - Bridal glow guarantee.</p></div></div>
+</div></div></section>
+<section class="bg-white"><div class="container"><div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80" style="width:100%;height:320px;object-fit:cover;border-radius:20px"></div><div class="col-md-6 aos-right"><p class="icon-badge">WHY V GLOW?</p><h2 class="section-title mt-2">Trusted By <span>20,000+ Clients</span></h2><p class="mt-2" style="font-size:14px">Since 2015, FDA-approved, dermatologist led, natural results.</p><p><i class="bi bi-patch-check-fill" style="color:var(--pink)"></i> <b>FDA Approved Machines Only</b></p><p><i class="bi bi-person-badge-fill" style="color:var(--pink)"></i> <b>Dermatologist Led Clinic</b></p><p><i class="bi bi-currency-rupee" style="color:var(--pink)"></i> <b>Transparent Pricing + EMI</b></p><p><i class="bi bi-arrow-counterclockwise" style="color:var(--pink)"></i> <b>90 Days Follow-up Free</b></p><a href="#contact" class="btn-pink mt-2">Visit Our Clinic →</a></div></div></div></section>
+</div>
+
+<!-- PAGE 5 : CONTACT -->
+<div id="contact" class="page">
+<section style="background:#FFF5F5"><div class="container"><div class="row justify-content-center"><div class="col-md-8"><div class="mb-3 aos-zoom"><h2 class="section-title text-center">Frequently Asked <span>Questions</span></h2></div>
+<details open><summary>Glass Skin treatment-ku pain irukkuma?</summary><p>Illa! Numbing cream use pannuvom. Mild tingling mattum irukkum. Downtime 1-2 days mattum.</p></details>
+<details><summary>HydraFacial-ku apram makeup poda mudiyuma?</summary><p>24 hours-ku makeup avoid pannunga. Apram normal-a makeup poda mudiyum. Sunscreen kandippa podanum.</p></details>
+<details><summary>Laser Hair Removal permanent-a?</summary><p>90% permanent reduction. 6 sessions mudinjadhum hair romba kurainjidum. Yearly 1 touch-up podhum.</p></details>
+</div></div></div></section>
+<section><div class="container"><div class="mb-3 aos-up"><p class="section-sub">VISIT US</p><h2 class="section-title">Visit Our <span>Skin Clinic</span></h2><p style="font-size:14px">HerbalSkin Clinic - T Nagar, Chennai</p></div>
+<div class="row g-2 g-md-4">
+<div class="col-12 col-md-4 aos-left"><div class="service-card text-center"><i class="bi bi-geo-alt-fill"></i><h4 class="mt-1">Our Location</h4><p style="font-size:13px">16, Sivaji Ganesan Road, T Nagar, Chennai - 600017</p><a href="https://www.google.com/maps/search/?api=1&query=V+Glow+Skin+Clinic+T+Nagar+Chennai" target="_blank" class="btn-pink">Find On Map →</a></div></div>
+<div class="col-12 col-md-4 aos-zoom"><div class="service-card text-center"><i class="bi bi-clock-fill"></i><h4 class="mt-1">Opening Hours</h4><p style="font-size:13px"><b>10 AM - 8 PM</b> - All Days<br>Sunday: 10 AM - 6 PM</p><p><span class="icon-badge">Open Now</span></p></div></div>
+<div class="col-12 col-md-4 aos-right"><div class="service-card text-center"><i class="bi bi-telephone-fill"></i><h4 class="mt-1">Contact Us</h4><p style="font-size:13px">Phone: +91 98765 43210<br>WhatsApp: +91 98765 43210<br>Email: hello@vglowskin.com</p></div></div>
+</div>
+<div class="row g-4 mt-2"><div class="col-md-6 aos-left"><h4>Send Enquiry - V Glow</h4><form class="bg-white p-3 p-md-4 rounded shadow-sm"><input placeholder="Your Name" class="form-control mb-2" required><input type="tel" placeholder="Phone Number" class="form-control mb-2" required><textarea placeholder="What is your skin concern?" rows="3" class="form-control mb-2"></textarea><button class="btn-pink w-100">Send Enquiry</button></form></div>
+<div class="col-md-6 aos-right"><h4>Subscribe For Glow Tips</h4><div class="bg-white p-3 p-md-4 rounded shadow-sm"><input type="email" placeholder="Enter Email" class="form-control mb-2"><button class="btn-pink w-100">Subscribe →</button><div class="alert alert-success mt-3" style="font-size:13px"><b>Free Gift:</b> First 50 subscribers-ku FREE AI Skin Analysis!</div></div></div></div>
+</div></section>
+</div>
+
+<!-- PAGE 1 : HOME - LAST IN HTML, SHOWS FIRST -->
 <div id="home" class="page">
 <div class="css-carousel">
 <div class="css-track">
@@ -264,8 +349,6 @@ footer{padding:60px 0 20px}
 <div class="col-6 col-md-3 aos-slide-up d3"><div class="treat-card"><span class="tag">CLEAR SKIN</span><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">25% OFF</span><h5 class="mt-2 mb-1">Pigmentation Laser</h5><p class="small text-muted mb-1">Dark Spots • 3 Sessions</p><div><span class="price">₹5,999</span> <span class="old-price">₹7,999</span></div><p class="small text-success mb-2">★ 4.9 | 3,200+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now →</a></div></div></div>
 </div></div></section>
 
-<!-- REAL RESULTS / REAL GLOW SECTION REMOVED -->
-
 <section><div class="container"><div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80" style="width:100%;height:340px;object-fit:cover;border-radius:20px"></div><div class="col-md-6 aos-right"><p class="icon-badge">WHY V GLOW?</p><h2 class="section-title mt-2">Not Just Facial, <span>It's Skin Science</span></h2><p class="mt-2" style="font-size:14px">V Care COE maari - AI 3D Skin Analyser-la unga skin-a 180° scan panni, aprom thaan treatment plan pannuvom. Guesswork illa, science mattum.</p><p><i class="bi bi-patch-check-fill" style="color:var(--pink)"></i> <b>AI 3D Skin Analyser - FREE Worth ₹1,499</b></p><p><i class="bi bi-shield-check" style="color:var(--pink)"></i> <b>FDA-Approved Machines - Korea / Israel / Europe</b></p><p><i class="bi bi-person-badge" style="color:var(--pink)"></i> <b>Dermatologist Led - 10+ Years Experience</b></p><p><i class="bi bi-heart" style="color:var(--pink)"></i> <b>No Overdone Look - Natural Results Only</b></p><a href="#booking" class="btn-pink mt-2">Book FREE Skin Analysis →</a></div></div></div></section>
 
 <section><div class="container"><div class="mb-3 aos-fade"><p class="section-sub">REVIEWS</p><h2 class="section-title">What Our <span>Clients Say</span></h2></div>
@@ -280,126 +363,43 @@ footer{padding:60px 0 20px}
 <div class="col-12 col-md-4 aos-flip d1"><div class="health-tip"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80"><div class="p-3"><small style="color:var(--pink);font-weight:700">HYDRATION</small><h5 class="mt-2">HydraFacial-ku Apram Enna Panna Koodadhu?</h5><p class="small text-muted">24 hours do's & don'ts...</p><a href="#" class="fw-bold text-decoration-none" style="color:var(--pink)">Read More →</a></div></div></div>
 <div class="col-12 col-md-4 aos-flip d2"><div class="health-tip"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=700&q=80"><div class="p-3"><small style="color:var(--pink);font-weight:700">LASER</small><h5 class="mt-2">Laser Hair Removal - Myths vs Truth</h5><p class="small text-muted">Pain-a? Permanent-a?...</p><a href="#" class="fw-bold text-decoration-none" style="color:var(--pink)">Read More →</a></div></div></div>
 </div></div></section>
-<div class="container"><div class="next-nav"><span class="page-number">Page 1 / 5</span><a href="#about" class="btn-next">Next - About Us →</a></div></div>
 </div>
 
-<div id="about" class="page">
-<section><div class="container">
-<div class="text-center mb-3 aos-zoom"><p class="icon-badge">ABOUT US</p><h2 class="section-title mt-2">More Than A Clinic, <span>It's Your Glow Story</span></h2><p style="font-size:14px;color:#888">Inspired By Korean Aesthetic Science - Since 2015</p></div>
-<div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><img class="about-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"></div><div class="col-md-6 aos-right"><h4>Our Story - V Glow</h4><p style="font-size:14px;color:#444">V Care COE Chennai-la Korean Glass Skin treatment-a paathu inspire aagi, naanga V Glow-a start pannen. Aim simple - <b>Korean technology, Chennai price-la, Dermatologist care-oda.</b></p><p style="font-size:14px;color:#444">2015-la chinna clinic-a start panni, ippo 20,000+ happy clients, 60+ treatments, FDA-approved machines-oda Chennai-vin trusted skin clinic-a irukkom.</p><div class="row g-2 mt-2"><div class="col-4 aos-bounce"><div class="counter-box"><h2>10+</h2><p>Years</p></div></div><div class="col-4 aos-bounce d1"><div class="counter-box"><h2>20K+</h2><p>Clients</p></div></div><div class="col-4 aos-bounce d2"><div class="counter-box"><h2>60+</h2><p>Treatments</p></div></div></div></div></div>
-</div></section>
-<section class="bg-white"><div class="container"><div class="mb-3 aos-up"><p class="section-sub">TECHNOLOGY</p><h2 class="section-title">World-Class <span>Technology</span></h2><p style="font-size:14px">V Care COE maari - Korea, Israel, Europe-la irundhu FDA-approved machines</p></div>
-<div class="row g-2 g-md-4">
-<div class="col-12 col-md-4 aos-left"><div class="service-card"><i class="bi bi-cpu"></i><h4 class="mt-2" style="font-size:16px">AI 3D Skin Analyser</h4><p style="font-size:13px">180° scan - Pigmentation, Pores, Sensitivity, Texture - 30 mins-la full report.</p></div></div>
-<div class="col-12 col-md-4 aos-zoom"><div class="service-card"><i class="bi bi-lightning-charge"></i><h4 class="mt-2" style="font-size:16px">Alma Laser Platform</h4><p style="font-size:13px">Fractional resurfacing - Acne scar, pores, texture - K-Beauty standard.</p></div></div>
-<div class="col-12 col-md-4 aos-right"><div class="service-card"><i class="bi bi-activity"></i><h4 class="mt-2" style="font-size:16px">Ultracel Q+ & Forma RF</h4><p style="font-size:13px">Ultrasound + Radiofrequency - Lift, Firm, Collagen boost - No surgery.</p></div></div>
-</div></div></section>
-<section><div class="container"><div class="mb-3 aos-fade"><p class="section-sub">OUR VALUES</p><h2 class="section-title">Why Clients <span>Trust Us</span></h2></div>
-<div class="row g-2 g-md-4">
-<div class="col-6 col-md-4 aos-flip"><div class="about-value"><i class="bi bi-patch-check-fill"></i><h5 class="mt-2" style="font-size:14px">FDA Approved Only</h5><p class="small text-muted">Cheap machines illa, certified only</p></div></div>
-<div class="col-6 col-md-4 aos-flip d1"><div class="about-value"><i class="bi bi-person-badge"></i><h5 class="mt-2" style="font-size:14px">Dermatologist Led</h5><p class="small text-muted">Every treatment doctor approval-oda</p></div></div>
-<div class="col-6 col-md-4 aos-flip"><div class="about-value"><i class="bi bi-eye"></i><h5 class="mt-2" style="font-size:14px">Natural Results</h5><p class="small text-muted">Overdone look illa, subtle glow mattum</p></div></div>
-<div class="col-6 col-md-4 aos-flip d1"><div class="about-value"><i class="bi bi-shield-check"></i><h5 class="mt-2" style="font-size:14px">Transparent Pricing</h5><p class="small text-muted">Hidden charges illa, EMI available</p></div></div>
-<div class="col-6 col-md-4 aos-flip"><div class="about-value"><i class="bi bi-heart"></i><h5 class="mt-2" style="font-size:14px">Personalised Plan</h5><p class="small text-muted">Oruve treatment ellaarkum illa</p></div></div>
-<div class="col-6 col-md-4 aos-flip d1"><div class="about-value"><i class="bi bi-clock"></i><h5 class="mt-2" style="font-size:14px">90 Days Follow-up</h5><p class="small text-muted">Treatment mudinjadhum follow-up free</p></div></div>
-</div></div></section>
-<section class="bg-white"><div class="container"><div class="mb-3 aos-up"><h2 class="section-title">Our <span>Journey</span></h2></div>
-<div class="row g-3"><div class="col-md-6"><div class="timeline-box aos-left"><h5>2015 - Started</h5><p>T Nagar-la chinna clinic-la start pannom. 2 doctors, 3 treatments mattum.</p></div><div class="timeline-box aos-left d1"><h5>2019 - Korean Technology</h5><p>Korea-la training eduthu, Glass Skin protocol-a Chennai-ku kondu vandhom.</p></div></div><div class="col-md-6"><div class="timeline-box aos-right"><h5>2022 - AI Skin Lab</h5><p>AI 3D Skin Analyser introduce pannom - Chennai-la first few clinics-la oruvar.</p></div><div class="timeline-box aos-right d1"><h5>2026 - 20K+ Clients</h5><p>Ippo 20,000+ happy clients, 4.9★ Google Rating, 60+ treatments.</p></div></div></div>
-<div class="mt-3 text-center aos-zoom"><a href="#treatments" class="btn-pink">View Treatments →</a> <a href="#booking" class="btn-white">Book FREE Analysis</a></div>
-</div></section>
-<div class="container"><div class="next-nav"><a href="#home" class="btn-prev">← Prev</a><span class="page-number">Page 2 / 5</span><a href="#treatments" class="btn-next">Next - Treatments →</a></div></div>
-</div>
-
-<div id="treatments" class="page">
-<section class="bg-white"><div class="container">
-<div class="text-center mb-3 aos-zoom"><p class="icon-badge">TREATMENTS & PRICES</p><h2 class="section-title mt-2">Choose Your <span>Glow</span></h2><p style="font-size:14px">Transparent Pricing - EMI Available - No Hidden Charges</p></div>
-<div class="row g-2 g-md-4">
-<div class="col-6 col-md-3 aos-up"><div class="treat-card"><span class="tag">✨ SIGNATURE</span><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">30% OFF</span><h5 class="mt-2 mb-1">Korean Glass Skin</h5><p class="small text-muted mb-1">7L + 3D • Single Day • 90 Days Glow</p><div><span class="price">₹9,999</span> <span class="old-price">₹14,999</span></div><p class="small text-success mb-2">★ 4.9 | 2,500+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-up d1"><div class="treat-card"><span class="tag">💧 POPULAR</span><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">40% OFF</span><h5 class="mt-2 mb-1">HydraFacial Glow</h5><p class="small text-muted mb-1">45 Mins • Instant Glow • No Downtime</p><div><span class="price">₹2,999</span> <span class="old-price">₹4,999</span></div><p class="small text-success mb-2">★ 5.0 | 5,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-up"><div class="treat-card"><span class="tag">LASER</span><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">50% OFF</span><h5 class="mt-2 mb-1">Laser Hair Removal</h5><p class="small text-muted mb-1">Diode Laser • 6 Sessions • Painless</p><div><span class="price">₹4,999</span> <span class="old-price">₹9,999</span></div><p class="small text-success mb-2">★ 4.8 | 8,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-up d1"><div class="treat-card"><span class="tag">CLEAR SKIN</span><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">25% OFF</span><h5 class="mt-2 mb-1">Pigmentation Laser</h5><p class="small text-muted mb-1">Dark Spots • Melasma • 3 Sessions</p><div><span class="price">₹5,999</span> <span class="old-price">₹7,999</span></div><p class="small text-success mb-2">★ 4.9 | 3,200+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-slide-up"><div class="treat-card"><span class="tag">ACNE</span><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">20% OFF</span><h5 class="mt-2 mb-1">Acne & Scar Treatment</h5><p class="small text-muted mb-1">Exosome + Laser • 90 Days Plan</p><div><span class="price">₹6,999</span> <span class="old-price">₹8,999</span></div><p class="small text-success mb-2">★ 4.9 | 4,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-slide-up d1"><div class="treat-card"><span class="tag">ANTI-AGEING</span><img src="https://images.unsplash.com/photo-1512291313931-d4291048e7b6?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">15% OFF</span><h5 class="mt-2 mb-1">Botox & Fillers</h5><p class="small text-muted mb-1">Natural Lift • Doctor Only • Safe</p><div><span class="price">₹8,999</span> <span class="old-price">₹10,999</span></div><p class="small text-success mb-2">★ 4.8 | 1,800+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-slide-up"><div class="treat-card"><span class="tag">WHITENING</span><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">30% OFF</span><h5 class="mt-2 mb-1">Skin Whitening / Brightening</h5><p class="small text-muted mb-1">Glutathione + Laser • Even Tone</p><div><span class="price">₹7,999</span> <span class="old-price">₹11,999</span></div><p class="small text-success mb-2">★ 4.7 | 2,100+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-<div class="col-6 col-md-3 aos-slide-up d1"><div class="treat-card"><span class="tag">HOLLYWOOD</span><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80"><div class="p-3"><span class="discount">35% OFF</span><h5 class="mt-2 mb-1">Carbon Hollywood Peel</h5><p class="small text-muted mb-1">Party Glow • 30 Mins • Instant</p><div><span class="price">₹3,499</span> <span class="old-price">₹5,499</span></div><p class="small text-success mb-2">★ 4.9 | 6,000+ Done</p><a href="#booking" class="btn-pink w-100 text-center" style="padding:9px">Book Now</a></div></div></div>
-</div>
-</div></section>
-<div class="container"><div class="next-nav"><a href="#about" class="btn-prev">← Prev</a><span class="page-number">Page 3 / 5</span><a href="#booking" class="btn-next">Next - Book Consultation →</a></div></div>
-</div>
-
-<div id="booking" class="page">
-<section style="background:#FFF5F5"><div class="container"><div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><h2 class="section-title">Book FREE AI Skin Analysis.<br><span>Get Your Personal Glow Plan.</span></h2><p style="font-size:14px">AI 3D Analyser-la unga skin-a scan panni, doctor unga-ku personalised plan tharuvanga. No obligation, no pressure.</p>
-<div class="row g-2 mt-2">
-<div class="col-4 aos-zoom"><div class="step-box"><div class="step-num">1</div><h6 style="font-size:13px">Book Free</h6><p class="small">Form fill pannunga</p></div></div>
-<div class="col-4 aos-zoom d1"><div class="step-box"><div class="step-num">2</div><h6 style="font-size:13px">AI Analysis</h6><p class="small">30 mins scan</p></div></div>
-<div class="col-4 aos-zoom d2"><div class="step-box"><div class="step-num">3</div><h6 style="font-size:13px">Glow Plan</h6><p class="small">Doctor plan</p></div></div>
-</div></div>
-<div class="col-md-6 aos-right"><div class="book-box"><div style="font-size:40px">✨🔍💆‍♀️</div><h4 class="mt-2">Book FREE Consultation</h4><p class="text-muted" style="font-size:13px">Worth ₹1,499 - Today FREE | Limited Slots</p><input type="text" placeholder="Your Name" class="form-control mb-2"><input type="tel" placeholder="Phone Number" class="form-control mb-2"><select class="form-select mb-2"><option>Select Concern</option><option>Korean Glass Skin</option><option>HydraFacial</option><option>Laser Hair Removal</option><option>Pigmentation / Dark Spots</option><option>Acne & Scar</option><option>Botox & Fillers</option><option>Anti-Ageing</option></select><input type="date" class="form-control mb-2"><a href="#contact" class="btn-pink w-100 text-center">Book FREE Analysis →</a><p class="small mt-2 text-muted">100% Private • No Spam • Doctor Call Within 2 Hours</p></div></div>
-</div></div></section>
-<section><div class="container"><div class="mb-3 aos-up"><p class="section-sub">OUR SERVICES</p><h2 class="section-title mt-2">More Than Just <span>A Clinic</span></h2></div>
-<div class="row g-2 g-md-4">
-<div class="col-12 col-md-4 aos-left"><div class="service-card"><i class="bi bi-cpu"></i><h4 class="mt-2" style="font-size:16px">AI Skin Analysis - FREE</h4><p style="font-size:13px">Pigmentation, pores, sensitivity, texture - Full report in 30 mins.</p></div></div>
-<div class="col-12 col-md-4 aos-zoom"><div class="service-card"><i class="bi bi-chat-dots"></i><h4 class="mt-2" style="font-size:16px">Doctor Consultation - FREE First Visit</h4><p style="font-size:13px">Dermatologist kitta 1-on-1 - Treatment plan + home care routine.</p></div></div>
-<div class="col-12 col-md-4 aos-right"><div class="service-card"><i class="bi bi-bag-heart"></i><h4 class="mt-2" style="font-size:16px">Home Care Kits</h4><p style="font-size:13px">Doctor recommended kits - Cleanser, Serum, Sunscreen, Moisturiser.</p></div></div>
-<div class="col-12 col-md-4 aos-left"><div class="service-card"><i class="bi bi-calendar-check"></i><h4 class="mt-2" style="font-size:16px">90 Days Follow-up</h4><p style="font-size:13px">Treatment-ku apram 90 days free follow-up + WhatsApp support.</p></div></div>
-<div class="col-12 col-md-4 aos-zoom"><div class="service-card"><i class="bi bi-credit-card"></i><h4 class="mt-2" style="font-size:16px">Easy EMI - 0% Interest</h4><p style="font-size:13px">Glass Skin-ku EMI - ₹999/month-la start pannalaam.</p></div></div>
-<div class="col-12 col-md-4 aos-right"><div class="service-card"><i class="bi bi-gift"></i><h4 class="mt-2" style="font-size:16px">Bridal Glow Package</h4><p style="font-size:13px">Wedding-ku 90 days munnadi start pannunga - Bridal glow guarantee.</p></div></div>
-</div></div></section>
-<section class="bg-white"><div class="container"><div class="row g-4 align-items-center"><div class="col-md-6 aos-left"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80" style="width:100%;height:320px;object-fit:cover;border-radius:20px"></div><div class="col-md-6 aos-right"><p class="icon-badge">WHY V GLOW?</p><h2 class="section-title mt-2">Trusted By <span>20,000+ Clients</span></h2><p class="mt-2" style="font-size:14px">Since 2015, FDA-approved, dermatologist led, natural results.</p><p><i class="bi bi-patch-check-fill" style="color:var(--pink)"></i> <b>FDA Approved Machines Only</b></p><p><i class="bi bi-person-badge-fill" style="color:var(--pink)"></i> <b>Dermatologist Led Clinic</b></p><p><i class="bi bi-currency-rupee" style="color:var(--pink)"></i> <b>Transparent Pricing + EMI</b></p><p><i class="bi bi-arrow-counterclockwise" style="color:var(--pink)"></i> <b>90 Days Follow-up Free</b></p><a href="#contact" class="btn-pink mt-2">Visit Our Clinic →</a></div></div></div></section>
-<div class="container"><div class="next-nav"><a href="#treatments" class="btn-prev">← Prev</a><span class="page-number">Page 4 / 5</span><a href="#contact" class="btn-next">Next - Contact →</a></div></div>
-</div>
-
-<div id="contact" class="page">
-<section style="background:#FFF5F5"><div class="container"><div class="row justify-content-center"><div class="col-md-8"><div class="mb-3 aos-zoom"><h2 class="section-title text-center">Frequently Asked <span>Questions</span></h2></div>
-<details open><summary>Glass Skin treatment-ku pain irukkuma?</summary><p>Illa! Numbing cream use pannuvom. Mild tingling mattum irukkum. Downtime 1-2 days mattum.</p></details>
-<details><summary>HydraFacial-ku apram makeup poda mudiyuma?</summary><p>24 hours-ku makeup avoid pannunga. Apram normal-a makeup poda mudiyum. Sunscreen kandippa podanum.</p></details>
-<details><summary>Laser Hair Removal permanent-a?</summary><p>90% permanent reduction. 6 sessions mudinjadhum hair romba kurainjidum. Yearly 1 touch-up podhum.</p></details>
-</div></div></div></section>
-<section><div class="container"><div class="mb-3 aos-up"><p class="section-sub">VISIT US</p><h2 class="section-title">Visit Our <span>Skin Clinic</span></h2><p style="font-size:14px">Herbal SkinClinic - T Nagar, Chennai</p></div>
-<div class="row g-2 g-md-4">
-<div class="col-12 col-md-4 aos-left"><div class="service-card text-center"><i class="bi bi-geo-alt-fill"></i><h4 class="mt-1">Our Location</h4><p style="font-size:13px">16, Sivaji Ganesan Road, T Nagar, Chennai - 600017</p><a href="https://www.google.com/maps/search/?api=1&query=The+Skin+Studio+Clinic+T+Nagar+Chennai" target="_blank" class="btn-pink">Find On Map →</a></div></div>
-<div class="col-12 col-md-4 aos-zoom"><div class="service-card text-center"><i class="bi bi-clock-fill"></i><h4 class="mt-1">Opening Hours</h4><p style="font-size:13px"><b>10 AM - 8 PM</b> - All Days<br>Sunday: 10 AM - 6 PM</p><p><span class="icon-badge">Open Now</span></p></div></div>
-<div class="col-12 col-md-4 aos-right"><div class="service-card text-center"><i class="bi bi-telephone-fill"></i><h4 class="mt-1">Contact Us</h4><p style="font-size:13px">Phone: +91 81445 78912<br>WhatsApp: +91 81445 78912<br>Email: hello@vglowskin.com</p></div></div>
-</div>
-<div class="row g-4 mt-2"><div class="col-md-6 aos-left"><h4>Send Enquiry - The Skin Studio</h4><form class="bg-white p-3 p-md-4 rounded shadow-sm"><input placeholder="Your Name" class="form-control mb-2" required><input type="tel" placeholder="Phone Number" class="form-control mb-2" required><textarea placeholder="What is your skin concern?" rows="3" class="form-control mb-2"></textarea><button class="btn-pink w-100">Send Enquiry</button></form></div>
-<div class="col-md-6 aos-right"><h4>Subscribe For Glow Tips</h4><div class="bg-white p-3 p-md-4 rounded shadow-sm"><input type="email" placeholder="Enter Email" class="form-control mb-2"><button class="btn-pink w-100">Subscribe →</button><div class="alert alert-success mt-3" style="font-size:13px"><b>Free Gift:</b> First 50 subscribers-ku FREE AI Skin Analysis!</div></div></div></div>
-</div></section>
-<div class="container"><div class="next-nav"><a href="#booking" class="btn-prev">← Prev</a><span class="page-number">Page 5 / 5 - Last Page</span><a href="#home" class="btn-next">Home</a></div></div>
 </div>
 
 <footer><div class="container"><div class="row g-4">
 <div class="col-12 col-md-3">
-<h3>Herbal <span style="color:#C9A86A">Skin Clinic</span></h3>
-<p style="font-size:14px">Your trusted modern skincare clinic in Chennai. Korean technology, dermatologist care, natural glow. Inspired by Herbal SkinCOE, made for you.</p>
+<h3>Herbal<span style="color:#C9A86A">Skin Clinic</span></h3>
+<p style="font-size:14px">Your trusted modern skincare clinic in Chennai. Korean technology, dermatologist care, natural glow. Inspired by V Care COE, made for you.</p>
 <p><i class="bi bi-facebook fs-5 me-2"></i><i class="bi bi-instagram fs-5 me-2"></i><i class="bi bi-whatsapp fs-5 me-2"></i><i class="bi bi-youtube fs-5"></i></p>
-<a href="https://www.google.com/maps/search/?api=1&query=The+Skin+Studio+Clinic+T+Nagar+Chennai" target="_blank" style="display:inline-block;background:#C9A86A;color:#fff;padding:8px 16px;border-radius:20px;font-weight:600;font-size:13px;text-decoration:none;margin-top:6px">📍 View On Google Maps →</a>
+<a href="https://www.google.com/maps/search/?api=1&query=V+Glow+Skin+Clinic+T+Nagar+Chennai" target="_blank" style="display:inline-block;background:#C9A86A;color:#fff;padding:8px 16px;border-radius:20px;font-weight:600;font-size:13px;text-decoration:none;margin-top:6px">📍 View On Google Maps →</a>
 </div>
 <div class="col-6 col-md-2"><h5>Quick Links</h5><a href="#home">Home</a><a href="#about">About Us</a><a href="#treatments">Treatments</a><a href="#booking">Book Consultation</a><a href="#contact">Contact</a></div>
 <div class="col-6 col-md-2"><h5>Treatments</h5><a href="#treatments">Korean Glass Skin</a><a href="#treatments">HydraFacial</a><a href="#treatments">Laser Hair Removal</a><a href="#treatments">Pigmentation</a><a href="#treatments">Botox & Fillers</a></div>
-<div class="col-12 col-md-2"><h5>Contact</h5><p>T Nagar, Chennai</p><p>+91 81445 78912</p><p>hello@vglowskin.com</p><p>10 AM - 8 PM Daily</p><a href="https://www.google.com/maps/dir/?api=1&destination=The+Skin+Studio+Clinic+T+Nagar+Chennai" target="_blank" style="color:#C9A86A;font-weight:700;font-size:13px">🧭 Get Directions →</a></div>
+<div class="col-12 col-md-2"><h5>Contact</h5><p>T Nagar, Chennai</p><p>+91 98765 43210</p><p>hello@vglowskin.com</p><p>10 AM - 8 PM Daily</p><a href="https://www.google.com/maps/dir/?api=1&destination=V+Glow+Skin+Clinic+T+Nagar+Chennai" target="_blank" style="color:#C9A86A;font-weight:700;font-size:13px">🧭 Get Directions →</a></div>
 <div class="col-12 col-md-3">
 <h5><i class="bi bi-geo-alt-fill"></i> Find Us On Map</h5>
 <p style="font-size:13px;color:#ddd;margin-bottom:8px">16, Sivaji Ganesan Road,<br>T Nagar, Chennai - 600017</p>
 <div style="border-radius:16px;overflow:hidden;border:2px solid #C9A86A">
-<iframe src="https://www.google.com/maps?q=T+Nagar+Chennai+600017&output=embed" width="100%" height="170" style="border:0;display:block" loading="lazy" title="Herbal SkinClinic Location Map"></iframe>
+<iframe src="https://www.google.com/maps?q=T+Nagar+Chennai+600017&output=embed" width="100%" height="170" style="border:0;display:block" loading="lazy" title="HerbalSkin Clinic Location Map"></iframe>
 </div>
 <div class="d-flex gap-2 mt-2">
-<a href="https://www.google.com/maps/search/?api=1&query=The+Skin+Studio+Clinic+T+Nagar+Chennai" target="_blank" style="flex:1;text-align:center;background:#fff;color:#2B1A1A;padding:9px 8px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none">🗺️ Open Map</a>
-<a href="https://www.google.com/maps/dir/?api=1&destination=The+Skin+Studio+Clinic+T+Nagar+Chennai" target="_blank" style="flex:1;text-align:center;background:#C9A86A;color:#fff;padding:9px 8px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none">🧭 Directions</a>
-<a href="https://wa.me/918144578912?text=Hi%20The%20Skin%20Studio%2C%20I%20want%20location" target="_blank" style="flex:1;text-align:center;background:#25D366;color:#fff;padding:9px 8px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none">💬 WhatsApp</a>
+<a href="https://www.google.com/maps/search/?api=1&query=V+Glow+Skin+Clinic+T+Nagar+Chennai" target="_blank" style="flex:1;text-align:center;background:#fff;color:#2B1A1A;padding:9px 8px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none">🗺️ Open Map</a>
+<a href="https://www.google.com/maps/dir/?api=1&destination=V+Glow+Skin+Clinic+T+Nagar+Chennai" target="_blank" style="flex:1;text-align:center;background:#C9A86A;color:#fff;padding:9px 8px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none">🧭 Directions</a>
+<a href="https://wa.me/919876543210?text=Hi%20V%20Glow%2C%20I%20want%20location" target="_blank" style="flex:1;text-align:center;background:#25D366;color:#fff;padding:9px 8px;border-radius:20px;font-weight:700;font-size:12px;text-decoration:none">💬 WhatsApp</a>
 </div>
-<p style="font-size:12px;color:#aaa;margin-top:8px">📍 Near Herbal Skin T Nagar | 2 mins from T Nagar Bus Stand</p>
+<p style="font-size:12px;color:#aaa;margin-top:8px">📍 Near V Care T Nagar | 2 mins from T Nagar Bus Stand</p>
 </div>
-</div><hr style="border-color:#444"><div class="text-center"><p style="font-size:12px">© 2026 Herbal SkinClinic | FDA Approved • Dermatologist Led • Inspired by Herbal SkinCOE | <a href="https://www.google.com/maps/search/?api=1&query=The+Skin+Studio+Clinic+T+Nagar+Chennai" target="_blank" style="color:#C9A86A;text-decoration:none;display:inline">📍 View Map</a></p></div></div></footer>
+</div><hr style="border-color:#444"><div class="text-center"><p style="font-size:12px">© 2026 HerbalSkin Clinic | FDA Approved • Dermatologist Led • Inspired by V Care COE | <a href="https://www.google.com/maps/search/?api=1&query=V+Glow+Skin+Clinic+T+Nagar+Chennai" target="_blank" style="color:#C9A86A;text-decoration:none;display:inline">📍 View Map</a></p></div></div></footer>
 
 <div class="bottom-nav">
-<a href="#home"><i class="bi bi-house-door-fill"></i>Home</a>
-<a href="#about"><i class="bi bi-info-circle-fill"></i>About</a>
+<a href="#home">🏠 Home</a>
+<a href="#about">About</a>
 <a href="#booking" class="center-btn"><i class="bi bi-calendar-check-fill"></i></a>
-<a href="#treatments"><i class="bi bi-stars"></i>Treatments</a>
-<a href="#contact"><i class="bi bi-telephone-fill"></i>Contact</a>
+<a href="#treatments">Treatments</a>
+<a href="#contact">Contact</a>
 </div>
 
-<a href="https://wa.me/918144578912" class="whatsapp-float"><i class="bi bi-whatsapp"></i></a>
+<a href="https://wa.me/918144579812" class="whatsapp-float"><i class="bi bi-whatsapp"></i></a>
 </body>
 </html>
